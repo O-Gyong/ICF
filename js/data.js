@@ -1,26 +1,10 @@
 // ================= INITIAL STATE & DATA CONFIGURATION =================
 
-export const DEFAULT_ROSTER = [
-  { id: 'r1', name: '선수1', number: '14', position: '가드', height: '', strengths: '' },
-  { id: 'r2', name: '선수9', number: '1', position: '가드', height: '', strengths: '' },
-  { id: 'r3', name: '선수5', number: '18', position: '센터', height: '', strengths: '' },
-  { id: 'r4', name: '선수8', number: '11', position: '가드', height: '', strengths: '' },
-  { id: 'r5', name: '선수6', number: '5', position: '포워드', height: '', strengths: '' },
-  { id: 'r6', name: '선수7', number: '8', position: '센터', height: '', strengths: '' },
-  { id: 'r7', name: '선수10', number: '16', position: '포워드', height: '', strengths: '' },
-  { id: 'r8', name: '선수2', number: '17', position: '가드', height: '', strengths: '' },
-  { id: 'r9', name: '선수3', number: '29', position: '가드', height: '', strengths: '' },
-  { id: 'r10', name: '선수4', number: '13', position: '포워드', height: '', strengths: '' }
-];
+// 로스터/일정/라인업 기본값은 비워둡니다.
+// 실데이터는 Firestore에서 관리되며, 이 값은 빈 DB 최초 시드와 전체 리셋 시에만 사용됩니다.
+export const DEFAULT_ROSTER = [];
 
-export const DEFAULT_SCHEDULE = [
-  { id: 's0', opponent: 'BDR 스타터스 리그', date: '2026-07-26', time: '10:20~미정', location: '체육관A(주소 비공개)', participants: '선수1, 선수9, 선수5, 선수8, 선수6, 선수7, 선수10, 선수2, 선수3, 선수4', finished: false, ourScore: null, oppScore: null },
-  { id: 's1', opponent: '교류전', date: '2026-07-19', time: '14:00~16:00', location: '장소 미정', participants: '선수6, 선수1, 선수4, 선수7', finished: false, ourScore: null, oppScore: null },
-  { id: 's2', opponent: '내전', date: '2026-07-11', time: '14:00~16:00', location: '장소 미정', participants: '참가자 미정', finished: false, ourScore: null, oppScore: null },
-  { id: 's3', opponent: '고려대 동아리 교류전', date: '2026-06-27', time: '10:00~12:00', location: '체육관B(주소 비공개)', participants: '선수6, 선수1, 선수8, 선수3, 선수4, 선수7, 선수9, 선수10, 선수5', finished: true, ourScore: 0, oppScore: 0 },
-  { id: 's4', opponent: '내전+게스트2', date: '2026-06-19', time: '22:00~24:00', location: '체육관C(주소 비공개)', participants: '선수6, 선수1, 선수3, 선수4, 선수7, 선수8, 선수9, 선수2', finished: true, ourScore: 0, oppScore: 0 },
-  { id: 's5', opponent: '내전', date: '2026-06-13', time: '08:00~10:00', location: '체육관B', participants: '선수6, 선수1, 선수9, 선수8, 선수7, 게스트1, 선수3, 선수4, 선수2, 선수10', finished: true, ourScore: 0, oppScore: 0 }
-];
+export const DEFAULT_SCHEDULE = [];
 
 export const DEFAULT_SKILLS = [
   { id: 'k1', category: '슈팅', name: '자유투 루틴화', desc: '자유투 성공률 75% 이상 유지하기', checked: true },
@@ -44,10 +28,10 @@ export const DEFAULT_RULES = [
 export const DEFAULT_TACTICS = [];
 
 export const DEFAULT_LINEUPS = [
-  { id: 'q1', quarter: '1쿼터', players: '선수6, 선수5, 선수1, 선수7, 선수3' },
-  { id: 'q2', quarter: '2쿼터', players: '선수6, 선수10, 선수9, 선수4, 선수8' },
-  { id: 'q3', quarter: '3쿼터', players: '선수5, 선수1, 선수3, 선수7, 선수10' },
-  { id: 'q4', quarter: '4쿼터', players: '선수5, 선수8, 선수6, 선수4, 선수9' }
+  { id: 'q1', quarter: '1쿼터', players: '' },
+  { id: 'q2', quarter: '2쿼터', players: '' },
+  { id: 'q3', quarter: '3쿼터', players: '' },
+  { id: 'q4', quarter: '4쿼터', players: '' }
 ];
 
 export const DATA_KEYS = ['roster', 'schedule', 'skills', 'rules', 'tactics', 'lineups'];

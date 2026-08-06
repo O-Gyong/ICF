@@ -9,6 +9,23 @@ ICF 농구팀의 대회 준비를 위한 팀 관리 웹 애플리케이션입니
 
 > 선수 이름·경기 일정·장소가 나오는 화면(대시보드·일정·규칙·로스터)은 데모용 더미 데이터입니다.
 
+<details>
+<summary><b>📸 화면 한눈에 보기</b> — 클릭해서 펼치기</summary>
+
+| 대시보드 | 다크 모드 | 대회 일정 |
+|---|---|---|
+| <img src="screenshots/dashboard.png" alt="대시보드" width="260"> | <img src="screenshots/dashboard-dark.png" alt="다크 모드" width="260"> | <img src="screenshots/schedule.png" alt="대회 일정" width="260"> |
+
+| 전술 보드 | 전술 참고 자료 | 스킬 |
+|---|---|---|
+| <img src="screenshots/tactics.png" alt="전술 보드" width="260"> | <img src="screenshots/tactics-media.png" alt="전술 참고 자료" width="260"> | <img src="screenshots/skills.png" alt="스킬" width="260"> |
+
+| 경기 규칙 | 팀 로스터 | 모바일 |
+|---|---|---|
+| <img src="screenshots/rules.png" alt="경기 규칙" width="260"> | <img src="screenshots/roster.png" alt="팀 로스터" width="260"> | <img src="screenshots/mobile-dashboard.png" alt="모바일 대시보드" width="120"> <img src="screenshots/mobile-tactics.png" alt="모바일 전술 보드" width="120"> |
+
+</details>
+
 ## 주요 기능
 
 ### 📊 대시보드

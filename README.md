@@ -59,6 +59,12 @@ ICF 농구팀의 대회 준비를 위한 팀 관리 웹 애플리케이션입니
 |---|---|
 | ![경기 규칙](screenshots/rules.png) | ![팀 로스터](screenshots/roster.png) |
 
+### 다크 모드
+
+헤더의 토글 버튼으로 전환하며, 선택한 테마는 localStorage에 저장됩니다.
+
+![다크 모드 대시보드](screenshots/dashboard-dark.png)
+
 ### 모바일
 
 <p>

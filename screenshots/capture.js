@@ -87,6 +87,8 @@ async function capture(browser, shots, dummy) {
     });
     await page.evaluateOnNewDocument((data) => {
       for (const [k, v] of Object.entries(data)) localStorage.setItem(`hoop_${k}`, JSON.stringify(v));
+      // 다크 모드 촬영이 localStorage에 남아 다음 장까지 번지지 않도록 매 로드마다 초기화한다.
+      localStorage.setItem('icf-theme', 'light');
     }, DUMMY);
   }
 
@@ -131,12 +133,19 @@ async function capture(browser, shots, dummy) {
     args: ['--force-device-scale-factor=2', '--hide-scrollbars', '--font-render-hinting=none'],
   });
 
+  // 헤더의 테마 토글을 눌러 다크 모드로 전환한다.
+  const toDarkTheme = () => {
+    document.getElementById('btn-theme-toggle').click();
+    return `테마: ${document.documentElement.getAttribute('data-theme')}`;
+  };
+
   // 개인정보(선수 이름·일정·장소)가 노출되는 화면은 더미 데이터로 촬영한다.
   await capture(browser, [
     { tab: 'dashboard', file: 'dashboard.png', viewport: DESKTOP },
     { tab: 'schedule', file: 'schedule.png', viewport: DESKTOP },
     { tab: 'rules', file: 'rules.png', viewport: DESKTOP },
     { tab: 'roster', file: 'roster.png', viewport: DESKTOP },
+    { tab: 'dashboard', file: 'dashboard-dark.png', viewport: DESKTOP, prepare: toDarkTheme },
     { tab: 'dashboard', file: 'mobile-dashboard.png', viewport: MOBILE },
   ], true);
 

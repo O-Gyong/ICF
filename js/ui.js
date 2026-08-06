@@ -162,12 +162,14 @@ function renderDashboard() {
 }
 
 export function updateHeroCountdown() {
-  const countdownTimer = document.getElementById('countdown-timer');
   const heroTitle = document.getElementById('dashboard-hero-title');
   const heroSubtitle = document.getElementById('dashboard-hero-subtitle');
   const sidebarDDay = document.getElementById('sidebar-dday');
 
-  if (!countdownTimer || !heroTitle || !heroSubtitle) return;
+  if (!heroTitle || !heroSubtitle) return;
+
+  // countdown-timer는 heroTitle의 자식이라 innerHTML을 바꾸면 함께 사라진다. 매번 새로 만들어 넣는다.
+  const counter = (label) => `<span id="countdown-timer" class="text-highlight">${label}</span>`;
 
   const now = new Date();
   now.setHours(0, 0, 0, 0);
@@ -179,7 +181,6 @@ export function updateHeroCountdown() {
   });
 
   if (upcomingGames.length === 0) {
-    countdownTimer.innerText = "D-?";
     heroTitle.innerHTML = `등록된 다가오는 <span class="text-highlight">경기 일정이 없습니다.</span>`;
     heroSubtitle.innerText = '대회나 연습경기가 있다면 경기 일정을 추가하여 카운트다운을 가동하세요!';
     if (sidebarDDay) sidebarDDay.innerText = '-';
@@ -192,14 +193,12 @@ export function updateHeroCountdown() {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     if (diffDays === 0) {
-      countdownTimer.innerText = "D-Day";
-      heroTitle.innerHTML = `오늘 바로 <span class="text-highlight">${escapeHtml(nextGame.opponent)}</span>이 있습니다!`;
+      heroTitle.innerHTML = `오늘 바로 <span class="text-highlight">${escapeHtml(nextGame.opponent)}</span> 경기가 ${counter('D-Day')}!`;
       heroSubtitle.innerText = `장소: ${nextGame.location} | 시간: ${nextGame.time} | 참가자: ${nextGame.participants || '미정'}`;
       if (sidebarDDay) sidebarDDay.innerText = 'Day';
     } else {
       const days = ['일', '월', '화', '수', '목', '금', '토'];
-      countdownTimer.innerText = `D-${diffDays}`;
-      heroTitle.innerHTML = `다음 경기 <span class="text-highlight">${escapeHtml(nextGame.opponent)}</span>까지 <span class="text-highlight">${escapeHtml(countdownTimer.innerText)}</span> 남았습니다!`;
+      heroTitle.innerHTML = `다음 경기 <span class="text-highlight">${escapeHtml(nextGame.opponent)}</span>까지 ${counter(`D-${diffDays}`)} 남았습니다!`;
       heroSubtitle.innerText = `장소: ${nextGame.location} | 일시: ${nextGame.date}(${days[gameDate.getDay()]}) ${nextGame.time} | 참가자: ${nextGame.participants || '미정'}`;
       if (sidebarDDay) sidebarDDay.innerText = `-${diffDays}`;
     }

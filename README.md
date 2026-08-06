@@ -3,6 +3,8 @@
 ICF 농구팀의 대회 준비를 위한 팀 관리 웹 애플리케이션입니다.
 경기 일정 관리, 인터랙티브 전술 보드, 스킬 체크리스트, 경기 규칙, 팀 로스터를 한곳에서 관리하며, Firebase를 통해 팀원 전체가 실시간으로 데이터를 공유합니다.
 
+![대시보드](screenshots/dashboard.png)
+
 ## 주요 기능
 
 ### 📊 대시보드
@@ -39,6 +41,31 @@ ICF 농구팀의 대회 준비를 위한 팀 관리 웹 애플리케이션입니
 - 🌙 다크/라이트 테마 전환 (localStorage에 저장, 새로고침 시 플래시 방지)
 - 📱 모바일/데스크톱 반응형 레이아웃
 
+## 📸 화면 미리보기
+
+> 스킬·전술 화면은 실제 사용 중인 데이터이며, 선수 이름·경기 일정·장소가 나오는
+> 화면(대시보드·일정·규칙·로스터)은 데모용 더미 데이터로 촬영했습니다.
+> 재촬영은 [screenshots/capture.js](screenshots/capture.js) 참고.
+
+| 전술 보드 | 전술 참고 자료 |
+|---|---|
+| ![전술 보드](screenshots/tactics.png) | ![전술 참고 자료](screenshots/tactics-media.png) |
+
+| 대회 일정 | 스킬 |
+|---|---|
+| ![대회 일정](screenshots/schedule.png) | ![스킬](screenshots/skills.png) |
+
+| 경기 규칙 | 팀 로스터 |
+|---|---|
+| ![경기 규칙](screenshots/rules.png) | ![팀 로스터](screenshots/roster.png) |
+
+### 모바일
+
+<p>
+  <img src="screenshots/mobile-dashboard.png" alt="모바일 대시보드" width="300">
+  <img src="screenshots/mobile-tactics.png" alt="모바일 전술 보드" width="300">
+</p>
+
 ## 기술 스택
 
 | 구분 | 기술 |
@@ -66,7 +93,9 @@ ICF/
 │   ├── media.js          # 이미지 처리, Storage 업로드, 미리보기/라이트박스
 │   └── utils.js          # 공용 유틸리티
 ├── icf-logo.png          # 팀 로고
-└── court-zones.png       # 코트 구역 명칭 안내 이미지
+├── court-zones.png       # 코트 구역 명칭 안내 이미지
+└── screenshots/          # README용 화면 캡처
+    └── capture.js        # 캡처 자동화 스크립트 (더미 데이터 주입, 전술 선택)
 ```
 
 ## 데이터 동기화 방식

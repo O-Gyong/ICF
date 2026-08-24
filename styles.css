@@ -1191,6 +1191,35 @@ textarea {
   justify-content: center;
 }
 
+/* 전술 폼 하단 액션 버튼 줄 (전술 저장/업데이트 · 선택 해제 · 닫기) */
+.tactic-form-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tactic-form-actions .btn {
+  /* basis를 auto로 두어야 폭이 모자랄 때 flex-wrap이 실제로 줄바꿈한다
+     (flex-basis 0 + nowrap 조합은 줄바꿈 없이 텍스트가 잘림) */
+  flex: 1 1 auto;
+  white-space: nowrap;
+  word-break: keep-all;
+  min-width: 0;
+}
+
+@media (max-width: 576px) {
+  .tactic-form-actions .btn {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  /* 편집 모드처럼 버튼이 3개일 때: 주 버튼(전술 저장/업데이트)은 한 줄 전체,
+     보조 버튼(선택 해제/닫기)은 아랫줄을 반씩 나눠 갖는다 */
+  .tactic-form-actions .btn-primary {
+    flex-basis: 100%;
+  }
+}
+
 .tactic-list-divider {
   height: 1px;
   background-color: var(--color-border);
@@ -1279,8 +1308,8 @@ textarea {
 
 @media (max-width: 576px) {
   .board-float-toolbar {
-    left: 50px;
-    right: 10px;
+    left: 48px;
+    right: 8px;
     transform: none;
     width: auto;
     justify-content: flex-start;
@@ -1341,6 +1370,31 @@ textarea {
   background: var(--gradient-primary);
   color: #fff;
   border-color: transparent;
+}
+
+/* 좁은 화면: 툴바 버튼을 컴팩트하게 줄여 '이동'이 잘리지 않고 한 화면에 다 들어오게 한다.
+   (기본 규칙들보다 뒤에 선언해야 같은 특이도에서 이 규칙이 이긴다) */
+@media (max-width: 576px) {
+  .board-float-toolbar {
+    padding: 4px;
+    gap: 0.35rem;
+  }
+  .board-mode-control {
+    gap: 0.15rem;
+  }
+  .board-mode-control .control-btn {
+    padding: 0.4rem 0.4rem;
+    font-size: 0.78rem;
+  }
+  .board-toolbar-actions {
+    gap: 0.15rem;
+    padding-left: 0.25rem;
+  }
+  .board-icon-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
 }
 
 /* 그리기 도구 서브 툴바 (그리기 모드에서만 표시) */

@@ -794,7 +794,8 @@ export function loadTacticToForm(id) {
   renderBoardTacticNotes(tactic);
 
   const cancelBtn = document.getElementById('btn-cancel-tactic-edit');
-  if (cancelBtn) cancelBtn.style.display = 'inline-block';
+  // ''로 두면 .tactic-form-actions의 flex 레이아웃(줄바꿈 포함)이 그대로 적용된다
+  if (cancelBtn) cancelBtn.style.display = '';
 
   if (tactic.courtView && tactic.tokens) {
     currentCourtView = tactic.courtView;

@@ -1277,6 +1277,17 @@ textarea {
   max-width: calc(100% - 20px);
 }
 
+@media (max-width: 576px) {
+  .board-float-toolbar {
+    left: 50px;
+    right: 10px;
+    transform: none;
+    width: auto;
+    justify-content: space-between;
+    max-width: none;
+  }
+}
+
 .board-mode-control {
   border: none;
   background: transparent;

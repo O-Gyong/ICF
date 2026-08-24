@@ -1283,8 +1283,17 @@ textarea {
     right: 10px;
     transform: none;
     width: auto;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-width: none;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .board-float-toolbar::-webkit-scrollbar {
+    display: none;
+  }
+  .board-float-toolbar > * {
+    flex-shrink: 0;
   }
 }
 

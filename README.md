@@ -3,7 +3,7 @@
 ICF 농구팀의 대회 준비를 위한 팀 관리 웹 애플리케이션입니다.
 경기 일정 관리, 인터랙티브 전술 보드, 스킬 체크리스트, 경기 규칙, 팀 로스터를 한곳에서 관리하며, Firebase를 통해 팀원 전체가 실시간으로 데이터를 공유합니다.
 
-**🔗 앱 바로가기 — https://ohgyong.github.io/ICF/**
+**🔗 앱 바로가기 — https://o-gyong.github.io/ICF/**
 
 ![대시보드](screenshots/dashboard.png)
 
@@ -128,7 +128,7 @@ ICF/
 
 ## 실행 방법
 
-GitHub Pages로 배포되어 있습니다 — https://ohgyong.github.io/ICF/
+GitHub Pages로 배포되어 있습니다 — https://o-gyong.github.io/ICF/
 
 아래는 로컬에서 개발할 때의 실행 방법입니다. ES Modules를 사용하므로 로컬 웹 서버로 실행해야 합니다. (파일 직접 열기 ❌)
 
